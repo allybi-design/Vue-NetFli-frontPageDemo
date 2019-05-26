@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>NetFlix - Clone</title>
+  </head>
+  <body>
+    <div id="app">
+      <header id="showcase">
+        <div class="showcase-top">
+          <img src="assets/images/logo.png" alt="netflix clone" />
+        </div>
+        <div class="showcase-content">
+          <h1>See What's Next.</h1>
+          <p>Watch anything. Cancel at anytime</p>
+          <a href="#" class="btn btn-lg">
+            Watch FREE for 30 Days <i class="fas fa-chevron-right fa-sm"></i>
+          </a>
+        </div>
+      </header>
+
+      <section id="navbar">
+        <nav class="nav container">
+          <div :class="{active: tabs[0]}" class="nav-item " @click="setTab(0)">
+            <i class="fas fa-door-open fa-4x"></i>
+            <span class="nav-content ">
+              No Commitments<br />
+              Cancel online at any time
+            </span>
+          </div>
+
+          <div :class="{active: tabs[1]}" class="nav-item" @click="setTab(1)">
+            <i class="fas fa-tablet-alt fa-4x"></i>
+            <span class="nav-content">
+              Watch anywhere
+            </span>
+          </div>
+
+          <div :class="{active: tabs[2]}" class="nav-item" @click="setTab(2)">
+            <i class="fas fa-tags fa-4x"></i>
+            <span class="nav-content">
+              Pick your price
+            </span>
+          </div>
+        </nav>
+      </section>
+
+      <section id="tabs">
+        <div class="container">
+          <div v-if="tabs[0]" class="tab1">
+            <div class="commit-content">
+              <p>
+                If you decide Netflix isn't for you – no problem. <br />No
+                commitment. Cancel online at any time.
+              </p>
+              <button class="btn btn-lg" href="#">Try 30 Days Free</button>
+            </div>
+            <div class="commit-img">
+              <img src="assets/images/tab-content-1.png" alt="" />
+            </div>
+          </div>
+
+          <div v-if="tabs[1]" class="tab2">
+            <div class="heading">
+              <p>
+                Watch TV programmes and films at any time, anywhere -<br />
+                personalised for you.
+              </p>
+              <button class="btn btn-md" href="#">Try 30 Days Free</button>
+            </div>
+            <div class="cards">
+              <div class="card">
+                <img src="assets/images/tab-content-2-1.png" alt="card1" />
+                <h5>Watch on TV</h5>
+                <p>
+                  Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray
+                  players and more.
+                </p>
+              </div>
+
+              <div class="card">
+                <img src="assets/images/tab-content-2-2.png" alt="card1" />
+                <h5>Watch instantly or download for later.</h5>
+                <p>Available on phone and tablet, wherever you go.</p>
+              </div>
+
+              <div class="card">
+                <img src="assets/images/tab-content-2-3.png" alt="card1" />
+                <h5>Use any computer</h5>
+                <p>Watch on Netflix.com.</p>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="tabs[2]" class="tab3">
+            <div class="heading">
+              <span>Choose one plan and watch everything on Netflix.</span>
+              <button class="btn btn-lg" href="#">Try 30 Days Free</button>
+            </div>
+            <table class="tg">
+              <colgroup>
+                <col style="width: 750px" />
+                <col style="width: 150px" />
+                <col style="width: 150px" />
+                <col style="width: 150px" />
+              </colgroup>
+              <tr>
+                <th class="tg-ol6h"></th>
+                <th class="tg-24xa">BASIC</th>
+                <th class="tg-24xa">STANDARD</th>
+                <th class="tg-24xa">PREMIUM</th>
+              </tr>
+              <tr>
+                <td class="tg-ym4e">
+                  Monthly price after free month ends 23/06/19
+                </td>
+                <td class="tg-ucok">£5.99</td>
+                <td class="tg-ucok">£7.99</td>
+                <td class="tg-ucok">£9.99</td>
+              </tr>
+              <tr>
+                <td class="tg-ayyq">HD available</td>
+                <td class="tg-8ggc">&#10004;</td>
+                <td class="tg-8ggc">&#10004;</td>
+                <td class="tg-8ggc">&#10004;</td>
+              </tr>
+              <tr>
+                <td class="tg-ym4e">Ultra HD avaiulbale</td>
+                <td class="tg-ucok">&#10006;</td>
+                <td class="tg-ucok">&#10006;</td>
+                <td class="tg-ucok">&#10004;</td>
+              </tr>
+              <tr>
+                <td class="tg-ayyq">
+                  Screens you can watch on at the same time
+                </td>
+                <td class="tg-8ggc">1</td>
+                <td class="tg-8ggc">2</td>
+                <td class="tg-8ggc">4</td>
+              </tr>
+              <tr>
+                <td class="tg-pka1">
+                  Watch onn your laptop. TV, phone and table
+                </td>
+                <td class="tg-m55x">&#10004;</td>
+                <td class="tg-m55x">&#10004;</td>
+                <td class="tg-m55x">&#10004;</td>
+              </tr>
+              <tr>
+                <td class="tg-xz4n">Unlimited films and TV programmes</td>
+                <td class="tg-xz6j">&#10004;</td>
+                <td class="tg-xz6j">&#10004;</td>
+                <td class="tg-xz6j">&#10004;</td>
+              </tr>
+              <tr>
+                <td class="tg-pka1">Cancel at any time</td>
+                <td class="tg-m55x">&#10004;</td>
+                <td class="tg-m55x">&#10004;</td>
+                <td class="tg-m55x">&#10004;</td>
+              </tr>
+              <tr>
+                <td class="tg-xz4n">First month free</td>
+                <td class="tg-xz6j">&#10004;</td>
+                <td class="tg-xz6j">&#10004;</td>
+                <td class="tg-xz6j">&#10004;</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <footer id="footer">
+        <div class="container">
+          Questions? Call 0800 096 8879
+          <div class="links">
+            <ul class="link-col">
+              <li class="link-item"><a href="#">FAQ</a></li>
+              <li class="link-item"><a href="#">Investor Relations</a></li>
+              <li class="link-item"><a href="#">Ways to Watch</a></li>
+              <li class="link-item"><a href="#">Corparate Information</a></li>
+              <li class="link-item"><a href="#">Netflix Originals</a></li>
+              <li class="link-item"><span></span></li>
+              <li class="link-item"><a href="#">Netflix United Kingdom</a></li>
+            </ul>
+
+            <ul class="link-col">
+              <li class="link-item"><a href="#">Help Cneter</a></li>
+              <li class="link-item"><a href="#">Jobs</a></li>
+              <li class="link-item"><a href="#">Terms of Use</a></li>
+              <li class="link-item"><a href="#">Contact Us</a></li>
+            </ul>
+
+            <ul class="link-col">
+              <li class="link-item"><a href="#">Account</a></li>
+              <li class="link-item"><a href="#">Redeem gift cards</a></li>
+              <li class="link-item"><a href="#">Privacy</a></li>
+              <li class="link-item"><a href="#">Speed Test</a></li>
+            </ul>
+
+            <ul class="link-col">
+              <li class="link-item"><a href="#">Media Centre</a></li>
+              <li class="link-item"><a href="#">Buy gift cards</a></li>
+              <li class="link-item"><a href="#">Cookie Preferences</a></li>
+              <li class="link-item"><a href="#">Legal Notices</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+
+  <script src="assets/js/index.js"></script>
+</html>
